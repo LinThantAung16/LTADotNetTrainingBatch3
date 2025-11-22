@@ -22,5 +22,12 @@ namespace WinFormsApp
             frmProduct frmProduct = new frmProduct();
             frmProduct.ShowDialog();
         }
+
+
+        private void productCategoryToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            frmProductCategory frmProductCategory = new frmProductCategory();
+            frmProductCategory.ShowDialog();
+        }
     }
 }

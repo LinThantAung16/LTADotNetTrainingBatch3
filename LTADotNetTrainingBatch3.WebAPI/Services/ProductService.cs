@@ -4,6 +4,7 @@
     {
     }
 
+
     public class ProductCreateRequestDto
     {
         public string ProductName { get; set; }
@@ -30,7 +31,11 @@
 
         public decimal? Price { get; set; }
     }
-
+    public class ProductResponseDto
+    {
+        public bool IsSuccess { get; set; }
+        public string Message { get; set; }
+    }
 
     public class ProductGetResponseDto
     {

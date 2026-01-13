@@ -53,6 +53,42 @@ namespace LTADotNetTrainingBatch3.WebAPI.Services
             };
         }
 
+        public ProductResponseDto CreateProduct(ProductCreateRequestDto product)
+        {
+            SqlConnection connection = new SqlConnection(_connectionString);
+            connection.Open();
+
+            if (product.ProductName == "" || product.Quantity == 0 || product.Price == 0)
+            {
+                return new ProductResponseDto()
+                {
+                    IsSuccess = false,
+                    Message = "Need to fill every field"
+                };
+            }
+            string query = @"
+                            insert into Tbl_Product(ProductName, Quantity, Price) values 
+                            (@ProductName, @Quantity, @Price)";
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@ProductName", product.ProductName);
+            cmd.Parameters.AddWithValue("@Quantity", product.Quantity);
+            cmd.Parameters.AddWithValue("@Price", product.Price);
+            int result = cmd.ExecuteNonQuery();
+            if (result < 0) { 
+            return new ProductResponseDto()
+            {
+                IsSuccess = false,
+                Message = "Failed to create product"
+            };
+            }
+
+            return new ProductResponseDto()
+            {
+                IsSuccess = true,
+                Message = "Product created successfully"
+            };
+            
+        }
 
     }
 }

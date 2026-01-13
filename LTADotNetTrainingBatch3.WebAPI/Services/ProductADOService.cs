@@ -6,7 +6,11 @@ namespace LTADotNetTrainingBatch3.WebAPI.Services
     //Crt + R, I to implement interface
     public class ProductADOService : IProductADOService
     {
-        private readonly string _connectionString = "Server=DELL-16-LIN\\MSSQLSERVER01;Database=Batch3MiniPOS;User ID=sa;Password=sasa@123;TrustServerCertificate=True;";
+        private readonly string _connectionString;
+        public ProductADOService(IConfiguration configuration)
+        {
+            _connectionString = configuration.GetConnectionString("DbConnection")!;
+        }
 
         public ProductGetResponseDto GetProducts(int pageNo, int pageSize)
         {

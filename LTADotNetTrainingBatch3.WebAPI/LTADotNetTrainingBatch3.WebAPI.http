@@ -1,0 +1,6 @@
+@LTADotNetTrainingBatch3.WebAPI_HostAddress = http://localhost:5072
+
+GET {{LTADotNetTrainingBatch3.WebAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

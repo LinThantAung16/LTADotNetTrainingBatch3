@@ -12,7 +12,7 @@ namespace LTADotNetTrainingBatch3.ConsoleApp2
     {
         SqlConnectionStringBuilder sqlConnectionStringBuilder = new SqlConnectionStringBuilder()
         {
-            DataSource = ".",
+            DataSource = "DELL-16-LIN\\MSSQLSERVER01",
             InitialCatalog = "Batch3MiniPOS",
             UserID = "sa",
             Password = "sasa@123",

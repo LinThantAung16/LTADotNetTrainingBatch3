@@ -3,12 +3,10 @@
     public interface IProductADOService
     {
         ProductGetResponseDto GetProducts(int pageNo, int pageSize);
-
-        //what to do
+        ProductGetByIdResponseDto GetProduct(int id);
         ProductResponseDto CreateProduct(ProductCreateRequestDto request);
-        //ProductResponseDto DeleteProduct(int id);
-        //ProductGetByIdResponseDto GetProduct(int id);
-        //ProductResponseDto PatchProduct(int id, ProductPatchRequestDto request);
-        //ProductResponseDto UpdateProduct(int id, ProductUpdateRequestDto request);
+        ProductResponseDto PatchProduct(int id, ProductPatchRequestDto request);
+        ProductResponseDto UpdateProduct(int id, ProductUpdateRequestDto request);
+        ProductResponseDto DeleteProduct(int id);
     }
 }

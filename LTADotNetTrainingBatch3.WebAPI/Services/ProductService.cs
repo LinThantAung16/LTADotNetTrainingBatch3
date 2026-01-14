@@ -44,6 +44,12 @@
         public List<ProductDto> Products { get; set; }
     }
     
+    public class ProductGetByIdResponseDto
+    {
+        public bool IsSuccess { get; set; }
+        public string Message { get; set; }
+        public List<ProductDto> Products { get; set; }
+    }
 
     public class ProductGetListResponseDto
     {
